@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paie_B3_M1_002_La démarche de veille — Mode sombre</title>
+  <title>Paie_B3_M1_002_La démarche de veille — Mode sombre premium</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       /* Palette sombre bleu premium */
       --bg:#0b1226; --bg2:#0a0f22; --card:rgba(17,24,39,.92);
       --ink:#e5e7eb; --muted:#9ca3af; --line:#1f2937;
-      --blue:#3b82f6; --cyan:#06b6d4; --rose:#ec4899; --amber:#f59e0b; --emerald:#22c55e; --violet:#8b5cf6;
+      --blue:#3b82f6; --cyan:#06b6d4; --rose:#ec4899; --amber:#f59e0b; --emerald:#22c55e; --violet:#8b5cf6; --pink:#db2777;
     }
     html,body{height:100%}
     body{font-family:'Inter',sans-serif; background:linear-gradient(180deg,var(--bg),var(--bg2)); color:var(--ink)}
@@ -41,12 +43,27 @@
     .pill{font-size:.75rem; font-weight:700; padding:.2rem .6rem; border-radius:999px; border:1px solid #243042; background:#0b1226; color:#e5e7eb}
     .title-gradient{background:linear-gradient(90deg,#60a5fa,#22d3ee,#a78bfa); -webkit-background-clip:text; background-clip:text; color:transparent; animation:gradient-move 8s ease infinite; background-size:300% 300%}
     @keyframes gradient-move{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .sticky-nav{position:sticky;top:0;z-index:50;background:#0b1226cc;backdrop-filter:blur(6px);padding:.5rem 1rem;border-bottom:1px solid #243042}
-    .sticky-nav a{margin:0 .5rem; color:#60a5fa; font-weight:700; transition:.2s}
-    .sticky-nav a:hover{color:#ec4899}
-    /* Champs de saisie en mode sombre */
-    input, select, textarea { background:#0b1226 !important; color:#e2e8f0 !important; border-color:#334155 !important; }
-    input::placeholder, textarea::placeholder { color:#94a3b8; }
+    .sticky-nav{position:sticky;top:0;z-index:50;background:#0b1226cc;backdrop-filter:blur(6px);padding:.5rem 1rem;border-bottom:1px solid #243042;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+    .sticky-nav a{margin:0 .2rem; font-weight:800; transition:.2s}
+    .sticky-nav a:nth-child(1){color:var(--blue)}
+    .sticky-nav a:nth-child(2){color:var(--cyan)}
+    .sticky-nav a:nth-child(3){color:var(--amber)}
+    .sticky-nav a:nth-child(4){color:var(--emerald)}
+    .sticky-nav a:nth-child(5){color:var(--violet)}
+    .sticky-nav a:nth-child(6){color:var(--pink)}
+    .sticky-nav a:nth-child(7){color:var(--rose)}
+    .sticky-nav a:nth-child(8){color:var(--cyan)}
+    .sticky-nav a:nth-child(9){color:var(--emerald)}
+    .sticky-nav a:nth-child(10){color:var(--blue)}
+    .sticky-nav a:hover{filter:brightness(1.25)}
+    /* Couleurs des titres */
+    .hdr[data-color="blue"] h2{color:var(--blue)}
+    .hdr[data-color="cyan"] h2{color:var(--cyan)}
+    .hdr[data-color="amber"] h2{color:var(--amber)}
+    .hdr[data-color="emerald"] h2{color:var(--emerald)}
+    .hdr[data-color="violet"] h2{color:var(--violet)}
+    .hdr[data-color="rose"] h2{color:var(--rose)}
+    .hdr[data-color="pink"] h2{color:var(--pink)}
     /* Impression */
     @media print{
       .sticky, nav, .hdr{box-shadow:none}
@@ -59,7 +76,8 @@
 </head>
 <body class="antialiased">
 
-      <nav class="sticky-nav flex flex-wrap justify-center gap-3">
+  <!-- Sommaire sticky -->
+  <nav class="sticky-nav">
     <a href="#intro">🧭 Intro</a>
     <a href="#notion">📘 Notion</a>
     <a href="#interets">⚖️ Intérêts & limites</a>
@@ -72,49 +90,32 @@
     <a href="#piece">📎 Pièce jointe</a>
   </nav>
 
-  <div class="max-w-5xl mx-auto p-6">
+  <div class="max-w-6xl mx-auto p-4 md:p-8">
+
     <header class="text-center mb-8">
       <h1 class="text-3xl md:text-5xl font-extrabold title-gradient">✨ Paie_B3_M1_002 — La démarche de veille ✨</h1>
-      <p class="mt-3 text-lg text-slate-300">Mode <strong>sombre bleu premium</strong>, synthèse fidèle au PDF, outils interactifs et quiz à correction immédiate.</p>
+      <p class="mt-3 text-lg text-slate-300">Mode <strong>sombre bleu premium</strong>, synthèse structurée du module, outils interactifs (alertes & sourcing) et <strong>QCM final avec barème</strong>.</p>
       <div class="mt-3 flex flex-wrap gap-2 justify-center">
-        <span class="pill">🧭 Notion & démarche</span><span class="pill">⚖️ Intérêts & limites</span><span class="pill">🧰 Préparation</span><span class="pill">📣 Diffusion & curation</span>
+        <span class="pill">🧭 Notion & objectifs</span><span class="pill">🛡️ Limites & biais</span><span class="pill">🧰 Préparer sa veille</span><span class="pill">📣 Collecte → Analyse → Diffusion</span>
       </div>
-      <div class="mt-4">
-        <button class="btn alt" onclick="window.print()">🖨️ Imprimer / Export PDF</button>
-      </div>
+      <div class="mt-4"><button class="btn alt" onclick="window.print()">🖨️ Imprimer / Export PDF</button></div>
     </header>
 
-    <!-- Introduction -->
+    <!-- Intro -->
     <section id="intro" class="card">
-      <div class="hdr" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">🧭</span><h2 class="text-xl font-semibold">Introduction à la veille</h2></div>
-        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-      </div>
-      <div class="cnt">
-        <div class="pt-4 space-y-3 text-slate-300">
-          <p>La <strong>veille informationnelle</strong> consiste à collecter, analyser et diffuser des informations pertinentes pour anticiper les évolutions de son environnement professionnel. Elle est à la fois <em>continue</em>, <em>structurée</em> et <em>indispensable</em> à la prise de décision stratégique.</p>
-          <ul class="list-disc list-inside">
-            <li><strong>Objectif :</strong> surveiller l’environnement pour anticiper les changements.</li>
-            <li><strong>Outils :</strong> flux RSS, Google Alerts, veille sur LinkedIn, newsletters spécialisées…</li>
-            <li><strong>Bénéfices :</strong> gain de compétitivité, réduction des risques, meilleure prise de décision.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pièce jointe -->
-    <section id="piece" class="card">
-      <div class="hdr" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">📎</span><h2 class="text-xl font-semibold text-emerald-400">Pièce jointe</h2></div>
+      <div class="hdr" data-color="blue" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🧭</span><h2 class="text-xl font-semibold">Introduction & objectifs</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
         <div class="pt-4">
-          <div class="border-l-4 border-emerald-400 bg-[#0f172a] rounded-lg p-4">
-            <h3 class="text-lg font-bold text-emerald-400">🔗 Accéder au document du module</h3>
-            <p class="text-slate-300">Clique ci-dessous pour consulter la ressource complète : <em>Paie_B3_M1_002_La démarche de veille</em>.</p>
-            <a class="btn mt-3 inline-block" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1HqytEFMoBU26sCExE1ogu1xNAVRpy4zH/view?usp=drive_link">📂 Ouvrir la pièce jointe</a>
-            <p class="text-sm text-slate-500 mt-2">Le lien s’ouvre dans un nouvel onglet.</p>
+          <div class="box" style="border-left-color:var(--cyan)">
+            <h3 class="font-bold" style="color:var(--cyan)">🎯 Objectifs pédagogiques</h3>
+            <ul class="list-disc list-inside text-slate-300 space-y-1 mt-2">
+              <li>Comprendre la <strong>notion de veille</strong> et ses finalités (anticipation, décision).</li>
+              <li>Préparer un <strong>système de veille</strong> (objectifs, mots‑clés, sources).</li>
+              <li>Appliquer la <strong>démarche de veille</strong> : Collecte → Analyse → Diffusion.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -122,206 +123,74 @@
 
     <!-- I - Notion de veille -->
     <section id="notion" class="card">
-      <div class="hdr" onclick="toggle(this)">
+      <div class="hdr" data-color="cyan" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">📘</span><h2 class="text-xl font-semibold">I — Notion de veille</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-3">
-          <p>La veille est une <strong>activité continue et itérative</strong> visant la <em>surveillance active</em> de l’environnement (technologique, commercial, etc.) pour en anticiper les évolutions (définition AFNOR).</p>
+        <div class="pt-4 text-slate-300 space-y-2">
           <ul class="list-disc list-inside">
-            <li><strong>Veille</strong> ≠ <strong>recherche d’information</strong> ponctuelle : elles sont <em>complémentaires</em>.</li>
+            <li>Activité <strong>continue et itérative</strong> de <em>surveillance active</em> de l’environnement.</li>
+            <li>Veille ≠ recherche ponctuelle — elles sont <strong>complémentaires</strong>.</li>
             <li>Finalité : <strong>aider la décision</strong> et <strong>anticiper</strong>.</li>
           </ul>
-          <div class="q">
-            <p class="font-semibold">Quiz (5 questions)</p>
-            <div class="mt-2 space-y-2">
-              <div>
-                <p>Q1. La veille est une activité ponctuelle.</p>
-                <label><input type="radio" name="n1" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="n1" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q2. La veille porte aussi sur les domaines commercial et technologique.</p>
-                <label><input type="radio" name="n2" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="n2" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q3. Veille stratégique et informationnelle visent la prise de décision.</p>
-                <label><input type="radio" name="n3" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="n3" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q4. La recherche d’information est une forme de veille.</p>
-                <label><input type="radio" name="n4" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="n4" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q5. Veille et recherche d’information sont complémentaires.</p>
-                <label><input type="radio" name="n5" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="n5" value="f"> Faux</label>
-              </div>
-              <button class="btn mt-2" onclick="checkBlock('n',[false,true,true,false,true],'fb-n')">Valider</button>
-              <div id="fb-n" class="ok" style="display:none"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- I - Notion de veille (déjà présent ci‑dessus) -->
-
     <!-- III - Intérêts & limites -->
     <section id="interets" class="card">
-      <div class="hdr" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">⚖️</span><h2 class="text-xl font-semibold">III — Intérêts et limites</h2></div>
+      <div class="hdr" data-color="amber" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">⚖️</span><h2 class="text-xl font-semibold">III — Intérêts & limites</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-3">
+        <div class="pt-4 text-slate-300 space-y-2">
           <ul class="list-disc list-inside">
-            <li>Atouts : employabilité, décision, innovation, e‑réputation, satisfaction client.</li>
-            <li>Limites/risques : temps, infobésité, biais de représentativité, bulles algorithmiques.</li>
+            <li><strong>Atouts</strong> : employabilité, décision, innovation, e‑réputation, satisfaction client.</li>
+            <li><strong>Limites/risques</strong> : temps, infobésité, biais de représentativité, bulles algorithmiques.</li>
           </ul>
-          <div class="q">
-            <p class="font-semibold">Quiz (5 questions)</p>
-            <div class="mt-2 space-y-2">
-              <div>
-                <p>Q1. La veille n’est nécessaire que pour les postes à responsabilité.</p>
-                <label><input type="radio" name="i1" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="i1" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q2. La veille permet de surveiller son e‑réputation.</p>
-                <label><input type="radio" name="i2" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="i2" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q3. Il faut planifier la veille dans son gestion du temps.</p>
-                <label><input type="radio" name="i3" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="i3" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q4. Le biais de représentativité = ne chercher que des infos d’un même courant.</p>
-                <label><input type="radio" name="i4" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="i4" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q5. Les algorithmes ne favorisent pas la diversité d’opinion.</p>
-                <label><input type="radio" name="i5" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="i5" value="f"> Faux</label>
-              </div>
-              <button class="btn mt-2" onclick="checkBlock('i',[false,true,true,false,true],'fb-i')">Valider</button>
-              <div id="fb-i" class="ok" style="display:none"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- V - Préparer un système de veille -->
     <section id="preparer" class="card">
-      <div class="hdr" onclick="toggle(this)">
+      <div class="hdr" data-color="emerald" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">🧰</span><h2 class="text-xl font-semibold">V — Préparer un système de veille</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-3">
+        <div class="pt-4 text-slate-300 space-y-2">
           <ul class="list-disc list-inside">
-            <li>Définir les <strong>objectifs</strong> (QQOQCCP), périmètre et <strong>mots‑clés</strong> (brainstorming).</li>
-            <li>Identifier les <strong>sources</strong> (formalisées vs informelles), consigner et évaluer.</li>
+            <li>Définir <strong>objectifs</strong> (QQOQCCP), périmètre et <strong>mots‑clés</strong>.</li>
+            <li>Identifier les <strong>sources</strong> (formalisées / informelles), consigner et évaluer.</li>
           </ul>
-          <div class="q">
-            <p class="font-semibold">Quiz (5 questions)</p>
-            <div class="mt-2 space-y-2">
-              <div>
-                <p>Q1. Il faut fixer des objectifs selon les besoins.</p>
-                <label><input type="radio" name="p1" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="p1" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q2. Aucune méthode n’aide à délimiter le périmètre.</p>
-                <label><input type="radio" name="p2" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="p2" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q3. Définir des mots‑clés par besoin est pertinent.</p>
-                <label><input type="radio" name="p3" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="p3" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q4. Mieux vaut sélectionner des sources de qualité et les consigner.</p>
-                <label><input type="radio" name="p4" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="p4" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q5. Il faut avoir le plus de sources possibles sur un thème.</p>
-                <label><input type="radio" name="p5" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="p5" value="f"> Faux</label>
-              </div>
-              <button class="btn mt-2" onclick="checkBlock('p',[true,false,true,true,false],'fb-p')">Valider</button>
-              <div id="fb-p" class="ok" style="display:none"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- V - Préparer un système de veille (déjà présent ci‑dessus) -->
-
     <!-- VII - Démarche de veille -->
     <section id="demarche" class="card">
-      <div class="hdr" onclick="toggle(this)">
+      <div class="hdr" data-color="violet" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">🧭</span><h2 class="text-xl font-semibold">VII — Démarche de veille</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-3">
+        <div class="pt-4 text-slate-300 space-y-2">
           <ul class="list-disc list-inside">
-            <li><strong>Collecter</strong> : Pull (requêtes, opérateurs booléens) & Push (alertes, RSS).</li>
-            <li><strong>Analyser</strong> : qualité source, pertinence, classement en base (éviter favoris).</li>
-            <li><strong>Diffuser</strong> : pull (publier) / push (partager), outils de curation.</li>
+            <li><strong>Collecte</strong> : Pull (requêtes, opérateurs) & Push (alertes, RSS).</li>
+            <li><strong>Analyse</strong> : qualité des sources, pertinence, classement en base (éviter les simples favoris).</li>
+            <li><strong>Diffusion</strong> : pull (publier) / push (partager), curation (ex. Scoop.it).</li>
           </ul>
-          <div class="q">
-            <p class="font-semibold">Quiz (5 questions)</p>
-            <div class="mt-2 space-y-2">
-              <div>
-                <p>Q1. L’opérateur « ET » limite les résultats.</p>
-                <label><input type="radio" name="d1" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="d1" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q2. Un flux RSS permet de suivre des sites sélectionnés.</p>
-                <label><input type="radio" name="d2" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="d2" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q3. Enregistrer une page en favoris suffit pour classer l’info.</p>
-                <label><input type="radio" name="d3" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="d3" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q4. Scoop.it est un outil de curation.</p>
-                <label><input type="radio" name="d4" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="d4" value="f"> Faux</label>
-              </div>
-              <div>
-                <p>Q5. Evernote ne permet pas de diffuser.</p>
-                <label><input type="radio" name="d5" value="v"> Vrai</label>
-                <label class="ml-4"><input type="radio" name="d5" value="f"> Faux</label>
-              </div>
-              <button class="btn mt-2" onclick="checkBlock('d',[true,true,false,true,false],'fb-d')">Valider</button>
-              <div id="fb-d" class="ok" style="display:none"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Outils interactifs -->
     <section id="outils" class="card">
-      <div class="hdr" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">🛠️</span><h2 class="text-xl font-semibold" style="color:var(--cyan)">Outils de veille</h2></div>
+      <div class="hdr" data-color="pink" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🛠️</span><h2 class="text-xl font-semibold">Outils de veille</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
@@ -330,13 +199,14 @@
           <div class="box" style="border-left-color:var(--cyan)">
             <h3 class="font-bold" style="color:var(--cyan)">🔔 Générateur d’alertes (mock)</h3>
             <div class="grid grid-cols-2 gap-2 text-sm mt-2">
-              <label>Mot‑clé<input id="al-key" class="w-full rounded-md p-1" placeholder="ex. congés payés"></label>
+              <label>Mot‑clé<input id="al-key" class="w-full rounded-md p-1" placeholder="ex. SMIC, congés payés"></label>
               <label>Fréquence<select id="al-freq" class="w-full rounded-md p-1"><option>Quotidienne</option><option>Hebdomadaire</option><option>Mensuelle</option></select></label>
               <label class="col-span-2">Sources
                 <div class="mt-1 space-x-2">
                   <label><input type="checkbox" class="mr-1" value="Légifrance" checked> Légifrance</label>
                   <label><input type="checkbox" class="mr-1" value="Service‑Public.fr"> Service‑Public.fr</label>
-                  <label><input type="checkbox" class="mr-1" value="Blog RH"> Blogs RH</label>
+                  <label><input type="checkbox" class="mr-1" value="URSSAF"> URSSAF</label>
+                  <label><input type="checkbox" class="mr-1" value="Blogs RH"> Blogs RH</label>
                 </div>
               </label>
             </div>
@@ -361,39 +231,57 @@
 
     <!-- Test final (QCM + barème) -->
     <section id="test" class="card">
-      <div class="hdr" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">🎯</span><h2 class="text-xl font-semibold" style="color:var(--rose)">Test final — QCM + barème</h2></div>
+      <div class="hdr" data-color="rose" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🎯</span><h2 class="text-xl font-semibold">Test final — QCM + barème</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
         <div class="pt-4 text-slate-300">
           <div class="q">
             <p class="font-semibold">Q1. La veille est… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t1" value="a"> Une activité continue, itérative visant une surveillance active</label>
-            <label class="block mt-1"><input type="radio" name="t1" value="b"> Une activité ponctuelle visant la récolte d’informations</label>
-            <label class="block mt-1"><input type="radio" name="t1" value="c"> Une activité limitée à la surveillance du web</label>
+            <label class="block mt-1"><input type="radio" name="t1" value="a"> Une activité continue et itérative de surveillance active</label>
+            <label class="block mt-1"><input type="radio" name="t1" value="b"> Une recherche ponctuelle d’information</label>
+            <label class="block mt-1"><input type="radio" name="t1" value="c"> Un suivi exclusif des réseaux sociaux</label>
           </div>
           <div class="q">
-            <p class="font-semibold">Q2. La veille permet… (plusieurs réponses, 1 pt si A et B cochées uniquement)</p>
-            <label class="block mt-1"><input type="checkbox" name="t2" value="A"> A. De cerner les opportunités et menaces</label>
-            <label class="block mt-1"><input type="checkbox" name="t2" value="B"> B. D’informer les clients</label>
-            <label class="block mt-1"><input type="checkbox" name="t2" value="C"> C. De se former</label>
+            <p class="font-semibold">Q2. La veille permet… (plusieurs réponses, 1 pt si A et B uniquement)</p>
+            <label class="block mt-1"><input type="checkbox" name="t2" value="A"> A. D’anticiper opportunités/menaces</label>
+            <label class="block mt-1"><input type="checkbox" name="t2" value="B"> B. D’aider la décision</label>
+            <label class="block mt-1"><input type="checkbox" name="t2" value="C"> C. D’alimenter les concurrents</label>
           </div>
           <div class="q">
-            <p class="font-semibold">Q3. Un logiciel de Mind Mapping est… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t3" value="a"> Un logiciel de curation</label>
-            <label class="block mt-1"><input type="radio" name="t3" value="b"> Un générateur de mots‑clés</label>
-            <label class="block mt-1"><input type="radio" name="t3" value="c"> Un logiciel de cartes mentales</label>
+            <p class="font-semibold">Q3. Un flux RSS sert à… (1 pt)</p>
+            <label class="block mt-1"><input type="radio" name="t3" value="a"> Archiver des favoris</label>
+            <label class="block mt-1"><input type="radio" name="t3" value="b"> Suivre automatiquement les mises à jour d’un site</label>
+            <label class="block mt-1"><input type="radio" name="t3" value="c"> Écrire des articles de blog</label>
           </div>
           <div class="q">
             <p class="font-semibold">Q4. Risque des favoris pour classer l’info ? (réponse libre, 1 pt)</p>
-            <textarea id="t4" rows="2" class="w-full rounded-md p-2 mt-2" placeholder="Ex. seule l’URL est conservée, la page peut disparaître…"></textarea>
+            <textarea id="t4" rows="2" class="w-full rounded-md p-2 mt-2" placeholder="Ex. seule l’URL est conservée, contenu non sauvegardé, liens périssables…"></textarea>
           </div>
           <div class="q">
-            <p class="font-semibold">Q5. La veille sert à diffuser des informations vers… (plusieurs réponses, 1 pt si A et B sans C)</p>
-            <label class="block mt-1"><input type="checkbox" name="t5" value="A"> A. Les clients</label>
-            <label class="block mt-1"><input type="checkbox" name="t5" value="B"> B. Les collaborateurs</label>
-            <label class="block mt-1"><input type="checkbox" name="t5" value="C"> C. Les concurrents</label>
+            <p class="font-semibold">Q5. L’opérateur booléen qui <em>réduit</em> les résultats est… (1 pt)</p>
+            <label class="block mt-1"><input type="radio" name="t5" value="a"> OU</label>
+            <label class="block mt-1"><input type="radio" name="t5" value="b"> ET</label>
+            <label class="block mt-1"><input type="radio" name="t5" value="c"> SAUF (−)</label>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q6. Une base de connaissance (notes) sert à… (1 pt)</p>
+            <label class="block mt-1"><input type="radio" name="t6" value="a"> Remplacer le paramétrage paie</label>
+            <label class="block mt-1"><input type="radio" name="t6" value="b"> Classer/annoter l’info pour la retrouver et la diffuser</label>
+            <label class="block mt-1"><input type="radio" name="t6" value="c"> Éviter toute source externe</label>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q7. La curation (ex. Scoop.it) consiste à… (1 pt)</p>
+            <label class="block mt-1"><input type="radio" name="t7" value="a"> Produire du code</label>
+            <label class="block mt-1"><input type="radio" name="t7" value="b"> Sélectionner et partager des contenus pertinents</label>
+            <label class="block mt-1"><input type="radio" name="t7" value="c"> Faire de la publicité payante</label>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q8. La veille doit être… (1 pt)</p>
+            <label class="block mt-1"><input type="radio" name="t8" value="a"> Non planifiée</label>
+            <label class="block mt-1"><input type="radio" name="t8" value="b"> Planifiée dans la gestion du temps</label>
+            <label class="block mt-1"><input type="radio" name="t8" value="c"> Réservée aux managers</label>
           </div>
           <div class="flex items-center gap-3 mt-4">
             <button class="btn" onclick="gradeTest()">🧮 Calculer la note</button>
@@ -406,69 +294,59 @@
 
     <!-- IX - Essentiel & X - Auto-évaluation -->
     <section id="essentiel" class="card">
-      <div class="hdr" onclick="toggle(this)">
+      <div class="hdr" data-color="cyan" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">⭐</span><h2 class="text-xl font-semibold">IX — Essentiel</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-3">
+        <div class="pt-4 text-slate-300">
           <ul class="list-disc list-inside">
-            <li>Phase de réflexion → organisation → maîtrise d’outils → itérations.</li>
-            <li>Possibilité de veille <strong>participative</strong> avec règles et supervision.</li>
+            <li>Réflexion → organisation → outils → itérations.</li>
+            <li>Veille <strong>participative</strong> possible avec règles et supervision.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="auto" class="card">
-      <div class="hdr" onclick="toggle(this)">
+      <div class="hdr" data-color="emerald" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">📝</span><h2 class="text-xl font-semibold">X — Auto‑évaluation (score global)</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
         <div class="pt-4 text-slate-300">
-          <p class="text-sm text-slate-400 mb-2">Valide chaque quiz de section, puis calcule ton score total.</p>
-          <button class="btn" onclick="computeGlobal()">🎯 Calculer mon score total</button>
-          <span id="score-global" class="ml-3 font-bold"></span>
+          <p class="text-sm text-slate-400 mb-2">Valide le test final puis exporte en PDF si besoin.</p>
+          <button class="btn alt" onclick="window.print()">🖨️ Imprimer / Export PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pièce jointe (lien cliquable) -->
+    <section id="piece" class="card">
+      <div class="hdr" data-color="emerald" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">📎</span><h2 class="text-xl font-semibold">Pièce jointe</h2></div>
+        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="cnt">
+        <div class="pt-4">
+          <div class="box" style="border-left-color:var(--emerald)">
+            <h3 class="font-bold" style="color:var(--emerald)">🔗 Accéder au document du module</h3>
+            <p class="text-slate-300">Clique ci‑dessous pour ouvrir la ressource <em>Paie_B3_M1_002_La démarche de veille</em>.</p>
+            <a class="btn mt-2 inline-block" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1HqytEFMoBU26sCExE1ogu1xNAVRpy4zH/view?usp=drive_link">📂 Ouvrir la pièce jointe</a>
+            <p class="hint mt-2">Le lien s’ouvre dans un nouvel onglet.</p>
+          </div>
         </div>
       </div>
     </section>
 
   </div>
+
   <script>
     function toggle(h){
       const c=h.nextElementSibling; const i=h.querySelector('.icon');
       const isOpen = c.classList.contains('open');
       if(!isOpen){ c.classList.add('open'); i.classList.add('open'); c.scrollTop=0; }
       else { c.classList.remove('open'); i.classList.remove('open'); }
-    }
-
-    // Quiz par section (Vrai/Faux)
-    function checkBlock(prefix, answers, fbId){
-      let correct=true; let filled=true; let out=[];
-      for(let i=1;i<=answers.length;i++){
-        const name=prefix+i; const radios=document.getElementsByName(name);
-        let val=null; for(const r of radios){ if(r.checked){ val=r.value; break; }}
-        if(val===null){ filled=false; }
-        const isV = (val==='v');
-        const ok = (isV===answers[i-1]);
-        out.push(ok);
-        if(!ok) correct=false;
-      }
-      const fb=document.getElementById(fbId);
-      fb.style.display='block';
-      fb.className='ok '+(correct&&filled?'good':'bad');
-      if(!filled){ fb.innerText='❗ Réponds à toutes les questions.'; return; }
-      fb.innerText = correct ? '✅ Parfait, toutes les réponses sont correctes.' : '⚠️ Certaines réponses sont incorrectes : '+out.map((ok,idx)=> ok?null:('Q'+(idx+1))).filter(Boolean).join(', ');
-      window.__blocks = window.__blocks || {}; window.__blocks[prefix] = out.every(Boolean);
-    }
-
-    function computeGlobal(){
-      const b=window.__blocks||{}; const keys=['n','i','p','d'];
-      const total=keys.length; const score=keys.reduce((s,k)=> s + (b[k]?1:0),0);
-      const pct=Math.round(score/total*100);
-      const el=document.getElementById('score-global');
-      el.textContent=`Score sections validées : ${score}/${total} (${pct}%)`;
     }
 
     // Outils — Générateur d'alertes (mock)
@@ -479,7 +357,7 @@
       const examples=[
         `Nouvel article sur ${key} — Service‑Public.fr (il y a 2 jours)`,
         `Mise à jour ${key} — Légifrance (JO)`,
-        `Analyse experte: ${key} — Blog RH`
+        `Analyse experte: ${key} — URSSAF`
       ];
       const el=document.getElementById('out-alert');
       el.style.display='block'; el.className='ok good';
@@ -501,32 +379,27 @@
       el.innerHTML='<table class="tbl text-sm"><thead><tr><th>Type</th><th>Nom</th><th>URL</th><th>Commentaire</th></tr></thead><tbody>'+rows+'</tbody></table>';
     }
 
-    // Test final — barème 5 pts
+    // Test final — barème 8 pts
     function gradeTest(){
       let score=0; let notes=[];
-      // Q1
-      const t1=[...document.getElementsByName('t1')].find(r=>r.checked)?.value;
-      if(t1==='a'){ score+=1; } else { notes.push('Q1'); }
-      // Q2 (A & B only)
-      const t2=[...document.getElementsByName('t2')].filter(r=>r.checked).map(r=>r.value).sort().join('');
-      if(t2==='AB'){ score+=1; } else { notes.push('Q2'); }
-      // Q3
-      const t3=[...document.getElementsByName('t3')].find(r=>r.checked)?.value;
-      if(t3==='c'){ score+=1; } else { notes.push('Q3'); }
-      // Q4 (text contains idea of URL/favoris/disparition/perte contenu)
+      const pick=(n)=>[...document.getElementsByName(n)].find(r=>r.checked)?.value;
+      const pickMulti=(n)=>[...document.getElementsByName(n)].filter(r=>r.checked).map(r=>r.value).sort().join('');
+      if(pick('t1')==='a'){score++;} else notes.push('Q1');
+      if(pickMulti('t2')==='AB'){score++;} else notes.push('Q2');
+      if(pick('t3')==='b'){score++;} else notes.push('Q3');
       const t4=(document.getElementById('t4').value||'').toLowerCase();
-      const ok4=['url','favori','favoris','dispar','supprim','perdu','contenu'].some(k=>t4.includes(k));
-      if(ok4){ score+=1; } else { notes.push('Q4'); }
-      // Q5 (A & B only)
-      const t5=[...document.getElementsByName('t5')].filter(r=>r.checked).map(r=>r.value).sort().join('');
-      if(t5==='AB'){ score+=1; } else { notes.push('Q5'); }
-
-      const pct=Math.round(score/5*100);
-      const badge = score>=5? '🏆 Excellent' : score>=4? '👏 Très bien' : score>=3? '💪 Correct' : '📘 À retravailler';
-      document.getElementById('test-score').textContent = `Note : ${score}/5 (${pct}%)`;
+      const ok4=['url','favori','dispar','supprim','perdu','contenu','sauveg'].some(k=>t4.includes(k));
+      if(ok4){score++;} else notes.push('Q4');
+      if(pick('t5')==='b'){score++;} else notes.push('Q5');
+      if(pick('t6')==='b'){score++;} else notes.push('Q6');
+      if(pick('t7')==='b'){score++;} else notes.push('Q7');
+      if(pick('t8')==='b'){score++;} else notes.push('Q8');
+      const pct=Math.round(score/8*100);
+      const badge = score>=8? '🏆 Parfait' : score>=6? '👏 Très bien' : score>=4? '💪 Correct' : '📘 À retravailler';
+      document.getElementById('test-score').textContent = `Note : ${score}/8 (${pct}%)`;
       const fb=document.getElementById('test-fb');
-      fb.style.display='block'; fb.className='ok '+(score>=3?'good':'bad');
-      fb.textContent = (notes.length? 'À corriger : '+notes.join(', ')+' • ': '') + badge;
+      fb.style.display='block'; fb.className='ok '+(score>=4?'good':'bad');
+      fb.textContent = (notes.length&&score<8? 'À revoir : '+notes.join(', ')+' • ': '') + badge;
     }
   </script>
 </body>

@@ -56,7 +56,6 @@
     .sticky-nav a:nth-child(9){color:var(--emerald)}
     .sticky-nav a:nth-child(10){color:var(--blue)}
     .sticky-nav a:hover{filter:brightness(1.25)}
-    /* Couleurs des titres */
     .hdr[data-color="blue"] h2{color:var(--blue)}
     .hdr[data-color="cyan"] h2{color:var(--cyan)}
     .hdr[data-color="amber"] h2{color:var(--amber)}
@@ -64,14 +63,7 @@
     .hdr[data-color="violet"] h2{color:var(--violet)}
     .hdr[data-color="rose"] h2{color:var(--rose)}
     .hdr[data-color="pink"] h2{color:var(--pink)}
-    /* Impression */
-    @media print{
-      .sticky, nav, .hdr{box-shadow:none}
-      .hdr{background:transparent}
-      .cnt{max-height:none !important; overflow:visible !important; padding:0 0 .5rem 0}
-      .icon{display:none}
-      a[href]::after{content:""}
-    }
+    @media print{ .cnt{max-height:none !important; overflow:visible !important; padding:0 0 .5rem 0} .icon{display:none} a[href]::after{content:""} }
   </style>
 </head>
 <body class="antialiased">
@@ -80,13 +72,15 @@
   <nav class="sticky-nav">
     <a href="#intro">🧭 Intro</a>
     <a href="#notion">📘 Notion</a>
+    <a href="#quiz1">🧪 Quiz I</a>
     <a href="#interets">⚖️ Intérêts & limites</a>
+    <a href="#quiz2">🧪 Quiz II</a>
     <a href="#preparer">🧰 Préparer</a>
+    <a href="#quiz3">🧪 Quiz III</a>
     <a href="#demarche">🧭 Démarche</a>
+    <a href="#quiz4">🧪 Quiz IV</a>
     <a href="#outils">🛠️ Outils</a>
     <a href="#test">🎯 Test final</a>
-    <a href="#essentiel">⭐ Essentiel</a>
-    <a href="#auto">📝 Auto‑évaluation</a>
     <a href="#piece">📎 Pièce jointe</a>
   </nav>
 
@@ -94,32 +88,15 @@
 
     <header class="text-center mb-8">
       <h1 class="text-3xl md:text-5xl font-extrabold title-gradient">✨ Paie_B3_M1_002 — La démarche de veille ✨</h1>
-      <p class="mt-3 text-lg text-slate-300">Mode <strong>sombre bleu premium</strong>, synthèse structurée du module, outils interactifs (alertes & sourcing) et <strong>QCM final avec barème</strong>.</p>
+      <p class="mt-3 text-lg text-slate-300">Version détaillée & interactive (exactement sur le modèle fourni) : sous-sections, tableaux, mini‑outils par étape, <strong>quiz par section</strong> + <strong>test final</strong>.</p>
       <div class="mt-3 flex flex-wrap gap-2 justify-center">
-        <span class="pill">🧭 Notion & objectifs</span><span class="pill">🛡️ Limites & biais</span><span class="pill">🧰 Préparer sa veille</span><span class="pill">📣 Collecte → Analyse → Diffusion</span>
+        <span class="pill">🧭 Notion</span><span class="pill">⚖️ Intérêts & limites</span><span class="pill">🧰 Préparer</span><span class="pill">🧭 Démarche</span><span class="pill">🧪 Quiz x5</span>
       </div>
-      <div class="mt-4"><button class="btn alt" onclick="window.print()">🖨️ Imprimer / Export PDF</button></div>
+      <div class="mt-4 flex gap-2 justify-center">
+        <button class="btn alt" onclick="window.print()">🖨️ Imprimer / Export PDF</button>
+        <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1HqytEFMoBU26sCExE1ogu1xNAVRpy4zH/view?usp=drive_link">📂 Ouvrir la pièce jointe</a>
+      </div>
     </header>
-
-    <!-- Intro -->
-    <section id="intro" class="card">
-      <div class="hdr" data-color="blue" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">🧭</span><h2 class="text-xl font-semibold">Introduction & objectifs</h2></div>
-        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-      </div>
-      <div class="cnt">
-        <div class="pt-4">
-          <div class="box" style="border-left-color:var(--cyan)">
-            <h3 class="font-bold" style="color:var(--cyan)">🎯 Objectifs pédagogiques</h3>
-            <ul class="list-disc list-inside text-slate-300 space-y-1 mt-2">
-              <li>Comprendre la <strong>notion de veille</strong> et ses finalités (anticipation, décision).</li>
-              <li>Préparer un <strong>système de veille</strong> (objectifs, mots‑clés, sources).</li>
-              <li>Appliquer la <strong>démarche de veille</strong> : Collecte → Analyse → Diffusion.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- I - Notion de veille -->
     <section id="notion" class="card">
@@ -128,12 +105,70 @@
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-2">
-          <ul class="list-disc list-inside">
-            <li>Activité <strong>continue et itérative</strong> de <em>surveillance active</em> de l’environnement.</li>
-            <li>Veille ≠ recherche ponctuelle — elles sont <strong>complémentaires</strong>.</li>
-            <li>Finalité : <strong>aider la décision</strong> et <strong>anticiper</strong>.</li>
-          </ul>
+        <div class="pt-4">
+          <div class="subnav"><a href="#n-contexte">Contexte</a><a href="#n-def">Définition</a><a href="#n-veille-info">Veille vs recherche</a><a href="#n-types">Types de veille</a></div>
+          <div class="box" id="n-contexte" style="border-left-color:var(--cyan)">
+            <h3 class="font-bold" style="color:var(--cyan)">Contexte</h3>
+            <p class="text-slate-300">Face à la <strong>complexité croissante</strong> des métiers et à la <strong>masse d’information</strong> en ligne, la veille devient un réflexe professionnel pour rester performant.</p>
+          </div>
+          <div class="box" id="n-def" style="border-left-color:var(--blue)">
+            <h3 class="font-bold" style="color:var(--blue)">Définition (synthèse AFNOR)</h3>
+            <p class="text-slate-300">Activité <strong>continue</strong>, <strong>itérative</strong> de <em>surveillance active</em> de l’environnement (technologique, commercial, RH…), afin d’<strong>anticiper</strong> et d’<strong>aider la décision</strong>.</p>
+          </div>
+          <div class="box" id="n-veille-info" style="border-left-color:var(--emerald)">
+            <h3 class="font-bold" style="color:var(--emerald)">Veille ≠ recherche ponctuelle</h3>
+            <table class="tbl text-sm">
+              <thead><tr><th>Point</th><th>Veille</th><th>Recherche d’info</th></tr></thead>
+              <tbody>
+                <tr><td class="icon">Temporalité</td><td>Long terme, récurrente</td><td>À un instant T</td></tr>
+                <tr><td class="icon">Finalité</td><td>Anticiper, décider</td><td>Répondre à une question</td></tr>
+                <tr><td class="icon">Sortie</td><td>Notes, alertes, curation</td><td>Document(s) trouvé(s)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box" id="n-types" style="border-left-color:var(--violet)">
+            <h3 class="font-bold" style="color:var(--violet)">Panorama des veilles</h3>
+            <ul class="list-disc list-inside text-slate-300 space-y-1">
+              <li>Juridique & sociale (Légifrance, URSSAF), RH, concurrentielle, technologique, <em>e‑réputation</em>.</li>
+              <li>Livrables : note de veille, newsletter interne, tableau de bord, recommandation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- II - Exercice : Quiz I -->
+    <section id="quiz1" class="card">
+      <div class="hdr" data-color="pink" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🧪</span><h2 class="text-xl font-semibold">II — Exercice : Quiz (Notion)</h2></div>
+        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="cnt">
+        <div class="pt-4">
+          <div class="q">
+            <p class="font-semibold">Q1/3</p>
+            <p>La veille est surtout…</p>
+            <label class="block mt-2"><input type="radio" name="n1" value="a"> Une activité continue et organisée</label>
+            <label class="block mt-1"><input type="radio" name="n1" value="b"> Une recherche ponctuelle</label>
+            <button class="btn mt-2" onclick="checkOne('n1','a','n1-fb','La veille est continue et structurée, pas ponctuelle.')">Valider</button>
+            <div id="n1-fb" class="ok"></div>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q2/3</p>
+            <p>Objectif principal de la veille ?</p>
+            <label class="block mt-2"><input type="radio" name="n2" value="a"> Divertir les équipes</label>
+            <label class="block mt-1"><input type="radio" name="n2" value="b"> Anticiper et aider la décision</label>
+            <button class="btn mt-2" onclick="checkOne('n2','b','n2-fb','Finalité : anticipation et aide à la décision.')">Valider</button>
+            <div id="n2-fb" class="ok"></div>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q3/3</p>
+            <p>Choisis la bonne association : <em>Veille</em> = …</p>
+            <label class="block mt-2"><input type="radio" name="n3" value="a"> One‑shot, sans organisation</label>
+            <label class="block mt-1"><input type="radio" name="n3" value="b"> Processus long terme + livrables</label>
+            <button class="btn mt-2" onclick="checkOne('n3','b','n3-fb','On produit des notes/alertes, on capitalise.')">Valider</button>
+            <div id="n3-fb" class="ok"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -145,11 +180,73 @@
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-2">
-          <ul class="list-disc list-inside">
-            <li><strong>Atouts</strong> : employabilité, décision, innovation, e‑réputation, satisfaction client.</li>
-            <li><strong>Limites/risques</strong> : temps, infobésité, biais de représentativité, bulles algorithmiques.</li>
-          </ul>
+        <div class="pt-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="box" style="border-left-color:var(--amber)">
+              <h3 class="font-bold" style="color:var(--amber)">Atouts</h3>
+              <ul class="list-disc list-inside text-slate-300 space-y-1">
+                <li>Renforce l’<strong>employabilité</strong> et la <strong>décision</strong>.</li>
+                <li>Favorise l’<strong>innovation</strong> et la <strong>satisfaction client</strong>.</li>
+                <li>Améliore l’<strong>e‑réputation</strong> et l’anticipation des risques.</li>
+              </ul>
+            </div>
+            <div class="box" style="border-left-color:var(--rose)">
+              <h3 class="font-bold" style="color:var(--rose)">Écueils & biais</h3>
+              <ul class="list-disc list-inside text-slate-300 space-y-1">
+                <li><strong>Temps</strong> : prévoir un créneau dédié (cf. planificateur ci‑dessous).</li>
+                <li><strong>Infobésité</strong> : organiser la collecte, limiter les doublons.</li>
+                <li><strong>Biais de représentativité</strong> : recouper les infos.</li>
+                <li><strong>Actualité</strong> : proscrire les contenus périmés.</li>
+                <li><strong>Bulles algorithmiques</strong> : résultats personnalisés (diversifier sources).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="box" style="border-left-color:var(--cyan)">
+            <h3 class="font-bold" style="color:var(--cyan)">Planificateur de temps (mock)</h3>
+            <div class="grid grid-cols-3 gap-2 text-sm mt-2">
+              <label>Fréquence<select id="pl-freq" class="w-full rounded-md p-1"><option>Quotidienne</option><option>Hebdomadaire</option><option>Mensuelle</option></select></label>
+              <label>Durée (min)<input id="pl-min" type="number" value="30" class="w-full rounded-md p-1"></label>
+              <label>Créneau<input id="pl-slot" type="time" value="09:00" class="w-full rounded-md p-1"></label>
+            </div>
+            <button class="btn mt-2" onclick="planTime()">Proposer un planning</button>
+            <div id="out-planif" class="ok mt-2" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IV - Exercice : Quiz II -->
+    <section id="quiz2" class="card">
+      <div class="hdr" data-color="pink" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🧪</span><h2 class="text-xl font-semibold">IV — Exercice : Quiz (Intérêts & limites)</h2></div>
+        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="cnt">
+        <div class="pt-4">
+          <div class="q">
+            <p class="font-semibold">Q1/3</p>
+            <p>L’infobésité se combat d’abord par…</p>
+            <label class="block mt-2"><input type="radio" name="i1" value="a"> Davantage de sources</label>
+            <label class="block mt-1"><input type="radio" name="i1" value="b"> Une collecte organisée + filtres</label>
+            <button class="btn mt-2" onclick="checkOne('i1','b','i1-fb','Organisation, filtres et périmètre clair.')">Valider</button>
+            <div id="i1-fb" class="ok"></div>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q2/3</p>
+            <p>Un biais de représentativité =</p>
+            <label class="block mt-2"><input type="radio" name="i2" value="a"> Prendre une info isolée pour une tendance</label>
+            <label class="block mt-1"><input type="radio" name="i2" value="b"> Rassembler des sources variées</label>
+            <button class="btn mt-2" onclick="checkOne('i2','a','i2-fb','Il faut recouper et vérifier.')">Valider</button>
+            <div id="i2-fb" class="ok"></div>
+          </div>
+          <div class="q">
+            <p class="font-semibold">Q3/3</p>
+            <p>Les algorithmes de recherche…</p>
+            <label class="block mt-2"><input type="radio" name="i3" value="a"> Donnent les mêmes résultats à tout le monde</label>
+            <label class="block mt-1"><input type="radio" name="i3" value="b"> Personnalisent les résultats selon le profil</label>
+            <button class="btn mt-2" onclick="checkOne('i3','b','i3-fb','Pense à varier moteurs/sources pour élargir la vision.')">Valider</button>
+            <div id="i3-fb" class="ok"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -161,11 +258,65 @@
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-2">
-          <ul class="list-disc list-inside">
-            <li>Définir <strong>objectifs</strong> (QQOQCCP), périmètre et <strong>mots‑clés</strong>.</li>
-            <li>Identifier les <strong>sources</strong> (formalisées / informelles), consigner et évaluer.</li>
-          </ul>
+        <div class="pt-4">
+          <div class="subnav"><a href="#p-objectifs">Objectifs & périmètre</a><a href="#p-mots">Mots‑clés & opérateurs</a><a href="#p-sources">Sources</a></div>
+          <div class="box" id="p-objectifs" style="border-left-color:var(--emerald)">
+            <h3 class="font-bold" style="color:var(--emerald)">Objectifs & périmètre</h3>
+            <ul class="list-disc list-inside text-slate-300 space-y-1">
+              <li>Objectifs <strong>SMART</strong> + périmètre clair (thèmes, publics, livrables).</li>
+              <li>Destinataires : collaborateurs, managers, direction (formats adaptés).</li>
+            </ul>
+          </div>
+          <div class="box" id="p-mots" style="border-left-color:var(--cyan)">
+            <h3 class="font-bold" style="color:var(--cyan)">Générateur d’opérateurs booléens</h3>
+            <div class="grid md:grid-cols-3 gap-2 text-sm mt-2">
+              <label>Expression exacte<input id="b-exact" class="w-full rounded-md p-1" placeholder="\"congés payés\""></label>
+              <label>Inclure (ET)<input id="b-and" class="w-full rounded-md p-1" placeholder="URSSAF; bulletin"></label>
+              <label>Synonymes (OU)<input id="b-or" class="w-full rounded-md p-1" placeholder="SMIC; salaire minimum"></label>
+              <label>Exclure (SAUF)<input id="b-not" class="w-full rounded-md p-1" placeholder="pub; publicité"></label>
+              <label>site:<input id="b-site" class="w-full rounded-md p-1" placeholder="site:legifrance.gouv.fr"></label>
+              <label>type de fichier<input id="b-file" class="w-full rounded-md p-1" placeholder="filetype:pdf"></label>
+            </div>
+            <button class="btn mt-2" onclick="buildQuery()">Construire la requête</button>
+            <div id="out-bquery" class="ok mt-2" style="display:none"></div>
+          </div>
+          <div class="box" id="p-sources" style="border-left-color:var(--violet)">
+            <h3 class="font-bold" style="color:var(--violet)">Matrice des sources</h3>
+            <table class="tbl text-sm">
+              <thead><tr><th>Type</th><th>Exemples</th><th>Usage</th></tr></thead>
+              <tbody>
+                <tr><td class="icon">Formalisées</td><td>Légifrance, Service‑Public, URSSAF</td><td>Références fiables</td></tr>
+                <tr><td class="icon">Informelles</td><td>Blogs RH, LinkedIn, forums</td><td>Signaux faibles</td></tr>
+                <tr><td class="icon">Outils</td><td>RSS, alertes, agrégateurs</td><td>Automatiser la collecte</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VI - Exercice : Quiz III -->
+    <section id="quiz3" class="card">
+      <div class="hdr" data-color="pink" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🧪</span><h2 class="text-xl font-semibold">VI — Exercice : Quiz (Préparer)</h2></div>
+        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="cnt">
+        <div class="pt-4">
+          <div class="q"><p class="font-semibold">Q1/2</p>
+            <p>Le champ « Synonymes (OU) » doit…</p>
+            <label class="block mt-1"><input type="radio" name="p1" value="a"> Remplacer le champ ET</label>
+            <label class="block mt-1"><input type="radio" name="p1" value="b"> Élargir les résultats avec des mots proches</label>
+            <button class="btn mt-2" onclick="checkOne('p1','b','p1-fb','OU élargit, ET restreint, SAUF exclut.')">Valider</button>
+            <div id="p1-fb" class="ok"></div>
+          </div>
+          <div class="q"><p class="font-semibold">Q2/2</p>
+            <p>« site:legifrance.gouv.fr filetype:pdf » sert à…</p>
+            <label class="block mt-1"><input type="radio" name="p2" value="a"> Cibler un site et un format précis</label>
+            <label class="block mt-1"><input type="radio" name="p2" value="b"> Traduire une page</label>
+            <button class="btn mt-2" onclick="checkOne('p2','a','p2-fb','Filtrer par domaine et type de document.')">Valider</button>
+            <div id="p2-fb" class="ok"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -177,17 +328,70 @@
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
-        <div class="pt-4 text-slate-300 space-y-2">
-          <ul class="list-disc list-inside">
-            <li><strong>Collecte</strong> : Pull (requêtes, opérateurs) & Push (alertes, RSS).</li>
-            <li><strong>Analyse</strong> : qualité des sources, pertinence, classement en base (éviter les simples favoris).</li>
-            <li><strong>Diffusion</strong> : pull (publier) / push (partager), curation (ex. Scoop.it).</li>
-          </ul>
+        <div class="pt-4">
+          <div class="subnav"><a href="#d-collecte">Collecte</a><a href="#d-analyse">Analyse</a><a href="#d-diffusion">Diffusion & curation</a></div>
+          <div class="box" id="d-collecte" style="border-left-color:var(--cyan)">
+            <h3 class="font-bold" style="color:var(--cyan)">Collecte</h3>
+            <ul class="list-disc list-inside text-slate-300 space-y-1">
+              <li><strong>Pull</strong> : requêtes + opérateurs (voir générateur).</li>
+              <li><strong>Push</strong> : alertes e‑mail, <strong>RSS</strong>, newsletters.</li>
+            </ul>
+          </div>
+          <div class="box" id="d-analyse" style="border-left-color:var(--emerald)">
+            <h3 class="font-bold" style="color:var(--emerald)">Analyse : score de fiabilité (mock)</h3>
+            <div class="grid grid-cols-3 gap-2 text-sm mt-2">
+              <label>Récence (0–5)<input id="sc-rec" type="number" min="0" max="5" value="4" class="w-full rounded-md p-1"></label>
+              <label>Autorité (0–5)<input id="sc-aut" type="number" min="0" max="5" value="5" class="w-full rounded-md p-1"></label>
+              <label>Concordance (0–5)<input id="sc-con" type="number" min="0" max="5" value="4" class="w-full rounded-md p-1"></label>
+            </div>
+            <button class="btn mt-2" onclick="scoreSource()">Calculer le score</button>
+            <div id="out-score" class="ok mt-2" style="display:none"></div>
+          </div>
+          <div class="box" id="d-diffusion" style="border-left-color:var(--amber)">
+            <h3 class="font-bold" style="color:var(--amber)">Diffusion & curation</h3>
+            <ul class="list-disc list-inside text-slate-300 space-y-1">
+              <li><strong>Pull</strong> : publier une note de veille, base de connaissance.</li>
+              <li><strong>Push</strong> : partager (newsletter, groupe Teams), <em>curation</em> (ex. Scoop.it).</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Outils interactifs -->
+    <!-- VIII - Exercice : Quiz IV -->
+    <section id="quiz4" class="card">
+      <div class="hdr" data-color="pink" onclick="toggle(this)">
+        <div class="flex items-center gap-3"><span class="text-2xl">🧪</span><h2 class="text-xl font-semibold">VIII — Exercice : Quiz (Démarche)</h2></div>
+        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="cnt">
+        <div class="pt-4">
+          <div class="q"><p class="font-semibold">Q1/3</p>
+            <p>Le RSS appartient plutôt au mode…</p>
+            <label class="block mt-1"><input type="radio" name="d1" value="a"> Pull</label>
+            <label class="block mt-1"><input type="radio" name="d1" value="b"> Push</label>
+            <button class="btn mt-2" onclick="checkOne('d1','b','d1-fb','Le site pousse les mises à jour vers toi.')">Valider</button>
+            <div id="d1-fb" class="ok"></div>
+          </div>
+          <div class="q"><p class="font-semibold">Q2/3</p>
+            <p>La curation consiste à…</p>
+            <label class="block mt-1"><input type="radio" name="d2" value="a"> Agréger au hasard</label>
+            <label class="block mt-1"><input type="radio" name="d2" value="b"> Sélectionner & partager des contenus pertinents</label>
+            <button class="btn mt-2" onclick="checkOne('d2','b','d2-fb','Sélection, commentaire, diffusion ciblée.')">Valider</button>
+            <div id="d2-fb" class="ok"></div>
+          </div>
+          <div class="q"><p class="font-semibold">Q3/3</p>
+            <p>Pour fiabiliser une info, tu…</p>
+            <label class="block mt-1"><input type="radio" name="d3" value="a"> Te contentes d’un seul blog</label>
+            <label class="block mt-1"><input type="radio" name="d3" value="b"> Recoupes avec plusieurs sources fiables</label>
+            <button class="btn mt-2" onclick="checkOne('d3','b','d3-fb','Recouper et vérifier l’actualité de la source.')">Valider</button>
+            <div id="d3-fb" class="ok"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outils interactifs (consolidés) -->
     <section id="outils" class="card">
       <div class="hdr" data-color="pink" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">🛠️</span><h2 class="text-xl font-semibold">Outils de veille</h2></div>
@@ -195,7 +399,6 @@
       </div>
       <div class="cnt">
         <div class="pt-4 grid md:grid-cols-2 gap-4">
-          <!-- Générateur d'alertes (mock) -->
           <div class="box" style="border-left-color:var(--cyan)">
             <h3 class="font-bold" style="color:var(--cyan)">🔔 Générateur d’alertes (mock)</h3>
             <div class="grid grid-cols-2 gap-2 text-sm mt-2">
@@ -213,7 +416,6 @@
             <button class="btn mt-2" onclick="genAlert()">Générer l’aperçu</button>
             <div id="out-alert" class="ok mt-2" style="display:none"></div>
           </div>
-          <!-- Checklist sourcing -->
           <div class="box" style="border-left-color:var(--emerald)">
             <h3 class="font-bold" style="color:var(--emerald)">📚 Checklist sourcing</h3>
             <div class="grid grid-cols-3 gap-2 text-sm mt-2">
@@ -224,6 +426,7 @@
             </div>
             <button class="btn mt-2" onclick="addSource()">Ajouter</button>
             <div id="out-sources" class="ok mt-2" style="display:none"></div>
+            <button class="btn alt mt-2" onclick="exportSources()">⬇️ Exporter CSV</button>
           </div>
         </div>
       </div>
@@ -232,96 +435,67 @@
     <!-- Test final (QCM + barème) -->
     <section id="test" class="card">
       <div class="hdr" data-color="rose" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">🎯</span><h2 class="text-xl font-semibold">Test final — QCM + barème</h2></div>
+        <div class="flex items-center gap-3"><span class="text-2xl">🎯</span><h2 class="text-xl font-semibold">Test final — QCM + barème (12 pts)</h2></div>
         <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </div>
       <div class="cnt">
         <div class="pt-4 text-slate-300">
-          <div class="q">
-            <p class="font-semibold">Q1. La veille est… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t1" value="a"> Une activité continue et itérative de surveillance active</label>
-            <label class="block mt-1"><input type="radio" name="t1" value="b"> Une recherche ponctuelle d’information</label>
-            <label class="block mt-1"><input type="radio" name="t1" value="c"> Un suivi exclusif des réseaux sociaux</label>
+          <div class="q"><p class="font-semibold">1. La veille est…</p>
+            <label class="block mt-1"><input type="radio" name="t1" value="a"> Ponctuelle</label>
+            <label class="block mt-1"><input type="radio" name="t1" value="b"> Continue et itérative</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q2. La veille permet… (plusieurs réponses, 1 pt si A et B uniquement)</p>
-            <label class="block mt-1"><input type="checkbox" name="t2" value="A"> A. D’anticiper opportunités/menaces</label>
-            <label class="block mt-1"><input type="checkbox" name="t2" value="B"> B. D’aider la décision</label>
-            <label class="block mt-1"><input type="checkbox" name="t2" value="C"> C. D’alimenter les concurrents</label>
+          <div class="q"><p class="font-semibold">2. Veille vs recherche : coche la bonne paire</p>
+            <label class="block mt-1"><input type="radio" name="t2" value="a"> Veille = court terme / Recherche = long terme</label>
+            <label class="block mt-1"><input type="radio" name="t2" value="b"> Veille = long terme / Recherche = ponctuelle</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q3. Un flux RSS sert à… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t3" value="a"> Archiver des favoris</label>
-            <label class="block mt-1"><input type="radio" name="t3" value="b"> Suivre automatiquement les mises à jour d’un site</label>
-            <label class="block mt-1"><input type="radio" name="t3" value="c"> Écrire des articles de blog</label>
+          <div class="q"><p class="font-semibold">3. L’écueil « biais de représentativité » signifie…</p>
+            <label class="block mt-1"><input type="radio" name="t3" value="a"> Considérer une info isolée comme générale</label>
+            <label class="block mt-1"><input type="radio" name="t3" value="b"> Élargir la diversité des sources</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q4. Risque des favoris pour classer l’info ? (réponse libre, 1 pt)</p>
-            <textarea id="t4" rows="2" class="w-full rounded-md p-2 mt-2" placeholder="Ex. seule l’URL est conservée, contenu non sauvegardé, liens périssables…"></textarea>
+          <div class="q"><p class="font-semibold">4. Lequel est un opérateur qui restreint ?</p>
+            <label class="block mt-1"><input type="radio" name="t4" value="a"> OU</label>
+            <label class="block mt-1"><input type="radio" name="t4" value="b"> ET</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q5. L’opérateur booléen qui <em>réduit</em> les résultats est… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t5" value="a"> OU</label>
-            <label class="block mt-1"><input type="radio" name="t5" value="b"> ET</label>
-            <label class="block mt-1"><input type="radio" name="t5" value="c"> SAUF (−)</label>
+          <div class="q"><p class="font-semibold">5. site: + filetype: servent à…</p>
+            <label class="block mt-1"><input type="radio" name="t5" value="a"> Traduire la page</label>
+            <label class="block mt-1"><input type="radio" name="t5" value="b"> Cibler un domaine et un format</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q6. Une base de connaissance (notes) sert à… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t6" value="a"> Remplacer le paramétrage paie</label>
-            <label class="block mt-1"><input type="radio" name="t6" value="b"> Classer/annoter l’info pour la retrouver et la diffuser</label>
-            <label class="block mt-1"><input type="radio" name="t6" value="c"> Éviter toute source externe</label>
+          <div class="q"><p class="font-semibold">6. RSS =</p>
+            <label class="block mt-1"><input type="radio" name="t6" value="a"> Pull</label>
+            <label class="block mt-1"><input type="radio" name="t6" value="b"> Push</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q7. La curation (ex. Scoop.it) consiste à… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t7" value="a"> Produire du code</label>
-            <label class="block mt-1"><input type="radio" name="t7" value="b"> Sélectionner et partager des contenus pertinents</label>
-            <label class="block mt-1"><input type="radio" name="t7" value="c"> Faire de la publicité payante</label>
+          <div class="q"><p class="font-semibold">7. La curation consiste à…</p>
+            <label class="block mt-1"><input type="radio" name="t7" value="a"> Sélectionner et partager des contenus</label>
+            <label class="block mt-1"><input type="radio" name="t7" value="b"> Publier sans lire</label>
           </div>
-          <div class="q">
-            <p class="font-semibold">Q8. La veille doit être… (1 pt)</p>
-            <label class="block mt-1"><input type="radio" name="t8" value="a"> Non planifiée</label>
-            <label class="block mt-1"><input type="radio" name="t8" value="b"> Planifiée dans la gestion du temps</label>
-            <label class="block mt-1"><input type="radio" name="t8" value="c"> Réservée aux managers</label>
+          <div class="q"><p class="font-semibold">8. Pourquoi éviter les simples favoris ?</p>
+            <textarea id="t8" rows="2" class="w-full rounded-md p-2 mt-2" placeholder="Ex. l’URL seule est fragile, pas d’annotation…"></textarea>
+          </div>
+          <div class="q"><p class="font-semibold">9. Donne 2 atouts & 2 limites de la veille</p>
+            <textarea id="t9" rows="2" class="w-full rounded-md p-2 mt-2" placeholder="Atouts… Limites…"></textarea>
+          </div>
+          <div class="q"><p class="font-semibold">10. Score une source (0–5) : récence 5, autorité 4, concordance 4 = ?</p>
+            <label class="block mt-1"><input type="radio" name="t10" value="a"> 10/15</label>
+            <label class="block mt-1"><input type="radio" name="t10" value="b"> 13/15</label>
+          </div>
+          <div class="q"><p class="font-semibold">11. Push =</p>
+            <label class="block mt-1"><input type="radio" name="t11" value="a"> Tu vas chercher</label>
+            <label class="block mt-1"><input type="radio" name="t11" value="b"> Tu reçois automatiquement</label>
+          </div>
+          <div class="q"><p class="font-semibold">12. Un livrable pertinent de veille ?</p>
+            <label class="block mt-1"><input type="radio" name="t12" value="a"> Note de veille avec recommandations</label>
+            <label class="block mt-1"><input type="radio" name="t12" value="b"> Collection de liens sans tri</label>
           </div>
           <div class="flex items-center gap-3 mt-4">
-            <button class="btn" onclick="gradeTest()">🧮 Calculer la note</button>
-            <span id="test-score" class="pill"></span>
+            <button class="btn" onclick="gradeFinal()">🧮 Calculer la note</button>
+            <span id="final-score" class="pill"></span>
           </div>
-          <p id="test-fb" class="ok mt-2" style="display:none"></p>
+          <p id="final-fb" class="ok mt-2" style="display:none"></p>
         </div>
       </div>
     </section>
 
-    <!-- IX - Essentiel & X - Auto-évaluation -->
-    <section id="essentiel" class="card">
-      <div class="hdr" data-color="cyan" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">⭐</span><h2 class="text-xl font-semibold">IX — Essentiel</h2></div>
-        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-      </div>
-      <div class="cnt">
-        <div class="pt-4 text-slate-300">
-          <ul class="list-disc list-inside">
-            <li>Réflexion → organisation → outils → itérations.</li>
-            <li>Veille <strong>participative</strong> possible avec règles et supervision.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="auto" class="card">
-      <div class="hdr" data-color="emerald" onclick="toggle(this)">
-        <div class="flex items-center gap-3"><span class="text-2xl">📝</span><h2 class="text-xl font-semibold">X — Auto‑évaluation (score global)</h2></div>
-        <svg class="icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-      </div>
-      <div class="cnt">
-        <div class="pt-4 text-slate-300">
-          <p class="text-sm text-slate-400 mb-2">Valide le test final puis exporte en PDF si besoin.</p>
-          <button class="btn alt" onclick="window.print()">🖨️ Imprimer / Export PDF</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pièce jointe (lien cliquable) -->
+    <!-- Pièce jointe -->
     <section id="piece" class="card">
       <div class="hdr" data-color="emerald" onclick="toggle(this)">
         <div class="flex items-center gap-3"><span class="text-2xl">📎</span><h2 class="text-xl font-semibold">Pièce jointe</h2></div>
@@ -331,7 +505,7 @@
         <div class="pt-4">
           <div class="box" style="border-left-color:var(--emerald)">
             <h3 class="font-bold" style="color:var(--emerald)">🔗 Accéder au document du module</h3>
-            <p class="text-slate-300">Clique ci‑dessous pour ouvrir la ressource <em>Paie_B3_M1_002_La démarche de veille</em>.</p>
+            <p class="text-slate-300">Clique pour ouvrir <em>Paie_B3_M1_002_La démarche de veille</em>.</p>
             <a class="btn mt-2 inline-block" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1HqytEFMoBU26sCExE1ogu1xNAVRpy4zH/view?usp=drive_link">📂 Ouvrir la pièce jointe</a>
             <p class="hint mt-2">Le lien s’ouvre dans un nouvel onglet.</p>
           </div>
@@ -349,23 +523,62 @@
       else { c.classList.remove('open'); i.classList.remove('open'); }
     }
 
+    // Helper radio
+    function checkOne(name,good,fbId,explain){
+      const radios=document.getElementsByName(name);
+      let v=null; for(const r of radios){ if(r.checked){ v=r.value; break; }}
+      const fb=document.getElementById(fbId);
+      if(!v){ fb.className='ok bad'; fb.style.display='block'; fb.textContent='❗ Sélectionne une réponse.'; return; }
+      if(v===good){ fb.className='ok good'; fb.style.display='block'; fb.textContent='👍 Bonne réponse ! '+(explain||''); }
+      else { fb.className='ok bad'; fb.style.display='block'; fb.textContent='👎 Incorrect. '+(explain||''); }
+    }
+
+    // Intérêts — planificateur
+    function planTime(){
+      const f=document.getElementById('pl-freq').value; const m=parseInt(document.getElementById('pl-min').value||'0'); const t=document.getElementById('pl-slot').value||'09:00';
+      const el=document.getElementById('out-planif'); el.style.display='block'; el.className='ok good';
+      el.innerHTML=`🗓️ Recommandation : ${f.toLowerCase()} • ${m} min • ${t}. <br>Astuce : bloque un créneau récurrent dans l’agenda et regroupe les lectures.`;
+    }
+
+    // Préparer — booléen
+    function buildQuery(){
+      const exact=(document.getElementById('b-exact').value||'').trim();
+      const must=(document.getElementById('b-and').value||'').split(';').map(s=>s.trim()).filter(Boolean);
+      const or=(document.getElementById('b-or').value||'').split(';').map(s=>s.trim()).filter(Boolean);
+      const not=(document.getElementById('b-not').value||'').split(';').map(s=>s.trim()).filter(Boolean);
+      const site=(document.getElementById('b-site').value||'').trim();
+      const file=(document.getElementById('b-file').value||'').trim();
+      const parts=[];
+      if(exact) parts.push('"'+exact.replace(/"/g,'')+'"');
+      must.forEach(w=>parts.push(w));
+      if(or.length) parts.push('('+or.join(' OR ')+')');
+      not.forEach(w=>parts.push('-'+w));
+      if(site) parts.push(site);
+      if(file) parts.push(file);
+      const q=parts.join(' ');
+      const el=document.getElementById('out-bquery'); el.style.display='block'; el.className='ok good'; el.textContent='🔎 Requête : '+q;
+    }
+
+    // Démarche — score source
+    function scoreSource(){
+      const r=Math.max(0,Math.min(5,parseInt(document.getElementById('sc-rec').value||'0')));
+      const a=Math.max(0,Math.min(5,parseInt(document.getElementById('sc-aut').value||'0')));
+      const c=Math.max(0,Math.min(5,parseInt(document.getElementById('sc-con').value||'0')));
+      const score=r+a+c; const el=document.getElementById('out-score'); el.style.display='block'; el.className='ok '+(score>=9?'good':'bad');
+      el.textContent=`Score fiabilité : ${score}/15 — `+(score>=12?'👍 élevé':'à compléter par recoupements');
+    }
+
     // Outils — Générateur d'alertes (mock)
     function genAlert(){
       const key=(document.getElementById('al-key').value||'veille RH').trim();
       const freq=document.getElementById('al-freq').value;
       const sources=[...document.querySelectorAll('#outils input[type=checkbox]:checked')].map(c=>c.value);
-      const examples=[
-        `Nouvel article sur ${key} — Service‑Public.fr (il y a 2 jours)`,
-        `Mise à jour ${key} — Légifrance (JO)`,
-        `Analyse experte: ${key} — URSSAF`
-      ];
-      const el=document.getElementById('out-alert');
-      el.style.display='block'; el.className='ok good';
-      el.innerHTML=`Alerte <strong>${freq.toLowerCase()}</strong> • Sources: <em>${sources.join(', ')||'—'}</em><br>`+
-        '<ul class="list-disc list-inside mt-1">'+examples.map(e=>`<li>${e}</li>`).join('')+'</ul>';
+      const examples=[`Nouvel article sur ${key} — Service‑Public.fr (il y a 2 jours)`,`Mise à jour ${key} — Légifrance (JO)`,`Analyse experte : ${key} — URSSAF`];
+      const el=document.getElementById('out-alert'); el.style.display='block'; el.className='ok good';
+      el.innerHTML=`Alerte <strong>${freq.toLowerCase()}</strong> • Sources : <em>${sources.join(', ')||'—'}</em><br><ul class="list-disc list-inside mt-1">${examples.map(e=>`<li>${e}</li>`).join('')}</ul>`;
     }
 
-    // Outils — Checklist sourcing
+    // Outils — Checklist sourcing + export CSV
     const __sources=[];
     function addSource(){
       const type=document.getElementById('sc-type').value;
@@ -373,34 +586,14 @@
       const url=(document.getElementById('sc-url').value||'').trim();
       const note=(document.getElementById('sc-note').value||'').trim();
       __sources.push({type,name,url,note});
-      const rows=__sources.map(s=>`<tr><td>${s.type}</td><td>${s.name}</td><td>${s.url?`<a href="${s.url}" target="_blank" rel="noopener">${s.url}</a>`:''}</td><td>${s.note}</td></tr>`).join('');
-      const el=document.getElementById('out-sources');
-      el.style.display='block'; el.className='ok good';
+      renderSources();
+    }
+    function renderSources(){
+      const rows=__sources.map(s=>`<tr><td>${s.type}</td><td>${s.name}</td><td>${s.url?`<a href='${s.url}' target='_blank' rel='noopener'>${s.url}</a>`:''}</td><td>${s.note}</td></tr>`).join('');
+      const el=document.getElementById('out-sources'); el.style.display='block'; el.className='ok good';
       el.innerHTML='<table class="tbl text-sm"><thead><tr><th>Type</th><th>Nom</th><th>URL</th><th>Commentaire</th></tr></thead><tbody>'+rows+'</tbody></table>';
     }
-
-    // Test final — barème 8 pts
-    function gradeTest(){
-      let score=0; let notes=[];
-      const pick=(n)=>[...document.getElementsByName(n)].find(r=>r.checked)?.value;
-      const pickMulti=(n)=>[...document.getElementsByName(n)].filter(r=>r.checked).map(r=>r.value).sort().join('');
-      if(pick('t1')==='a'){score++;} else notes.push('Q1');
-      if(pickMulti('t2')==='AB'){score++;} else notes.push('Q2');
-      if(pick('t3')==='b'){score++;} else notes.push('Q3');
-      const t4=(document.getElementById('t4').value||'').toLowerCase();
-      const ok4=['url','favori','dispar','supprim','perdu','contenu','sauveg'].some(k=>t4.includes(k));
-      if(ok4){score++;} else notes.push('Q4');
-      if(pick('t5')==='b'){score++;} else notes.push('Q5');
-      if(pick('t6')==='b'){score++;} else notes.push('Q6');
-      if(pick('t7')==='b'){score++;} else notes.push('Q7');
-      if(pick('t8')==='b'){score++;} else notes.push('Q8');
-      const pct=Math.round(score/8*100);
-      const badge = score>=8? '🏆 Parfait' : score>=6? '👏 Très bien' : score>=4? '💪 Correct' : '📘 À retravailler';
-      document.getElementById('test-score').textContent = `Note : ${score}/8 (${pct}%)`;
-      const fb=document.getElementById('test-fb');
-      fb.style.display='block'; fb.className='ok '+(score>=4?'good':'bad');
-      fb.textContent = (notes.length&&score<8? 'À revoir : '+notes.join(', ')+' • ': '') + badge;
-    }
-  </script>
-</body>
-</html>
+    function exportSources(){
+      if(!__sources.length){ alert('Ajoute au moins une source.'); return; }
+      const csv=['Type;Nom;URL;Commentaire'].concat(__sources.map(s=>[s.type,s.name,s.url||'',s.note||''].map(x=>`"${(x||'').replace(/"/g,'""')}"`).join(';'))).join('\n');
+      const a=document.createElement('a'); a.href='data
